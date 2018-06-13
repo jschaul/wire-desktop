@@ -14,3 +14,6 @@ RUN npm run build:linux
 FROM ${deps}
 
 COPY --from=builder /src/wire-desktop/wrap/dist/*.deb /dist/
+
+# show dependency problems, i.e. dependencies are not listed in debian.control
+RUN cd /dist/ && dpkg-deb -x *amd64.deb . && ldd opt/wire-desktop/wire-desktop

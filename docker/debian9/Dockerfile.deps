@@ -1,1 +1,70 @@
 FROM debian:9
+
+# TODO: the following "not found" run-time dependencies must be installed:
+
+# ldd opt/wire-desktop/wire-desktop
+# 	linux-vdso.so.1 (0x00007ffe7bbe8000)
+# 	libnode.so => /dist/opt/wire-desktop/libnode.so (0x0000799de2357000)
+# 	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x0000799de213a000)
+# 	libgtk-x11-2.0.so.0 => not found
+# 	libgdk-x11-2.0.so.0 => not found
+# 	libpangocairo-1.0.so.0 => not found
+# 	libatk-1.0.so.0 => not found
+# 	libcairo.so.2 => not found
+# 	libgdk_pixbuf-2.0.so.0 => not found
+# 	libgio-2.0.so.0 => not found
+# 	libpango-1.0.so.0 => not found
+# 	libgobject-2.0.so.0 => not found
+# 	libfontconfig.so.1 => not found
+# 	libfreetype.so.6 => not found
+# 	libdbus-1.so.3 => not found
+# 	libX11-xcb.so.1 => not found
+# 	libxcb.so.1 => not found
+# 	libXi.so.6 => not found
+# 	libXcursor.so.1 => not found
+# 	libXdamage.so.1 => not found
+# 	libXrandr.so.2 => not found
+# 	libXcomposite.so.1 => not found
+# 	libXext.so.6 => not found
+# 	libXfixes.so.3 => not found
+# 	libXrender.so.1 => not found
+# 	libX11.so.6 => not found
+# 	libXtst.so.6 => not found
+# 	libXss.so.1 => not found
+# 	libgconf-2.so.4 => not found
+# 	libgmodule-2.0.so.0 => not found
+# 	libglib-2.0.so.0 => not found
+# 	libnss3.so => not found
+# 	libnssutil3.so => not found
+# 	libsmime3.so => not found
+# 	libnspr4.so => not found
+# 	libffmpeg.so => /dist/opt/wire-desktop/libffmpeg.so (0x0000799de1cb2000)
+# 	libasound.so.2 => not found
+# 	libcups.so.2 => not found
+# 	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x0000799de1aaa000)
+# 	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x0000799de18a6000)
+# 	libexpat.so.1 => not found
+# 	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000799de1524000)
+# 	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000799de1220000)
+# 	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000799de1009000)
+# 	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000799de0c6a000)
+# 	/lib64/ld-linux-x86-64.so.2 (0x0000799de36f9000)
+
+# Output from dpkg-i:
+
+# Preparing to unpack wire_3.2.0-f10e2e8_amd64.deb ...
+# Unpacking wire-desktop (3.2.0-f10e2e8) ...
+# dpkg: dependency problems prevent configuration of wire-desktop:
+#  wire-desktop depends on libappindicator1; however:
+#   Package libappindicator1 is not installed.
+#  wire-desktop depends on libasound2; however:
+#   Package libasound2 is not installed.
+#  wire-desktop depends on libgconf-2-4; however:
+#   Package libgconf-2-4 is not installed.
+#  wire-desktop depends on libnotify-bin; however:
+#   Package libnotify-bin is not installed.
+#  wire-desktop depends on libnss3; however:
+#   Package libnss3 is not installed.
+#  wire-desktop depends on libxss1; however:
+#   Package libxss1 is not installed.
+
