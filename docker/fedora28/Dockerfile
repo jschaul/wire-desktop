@@ -11,7 +11,9 @@ RUN mkdir /src && cd /src && git clone https://github.com/wireapp/wire-desktop.g
 
 WORKDIR /src/wire-desktop
 
-RUN npm install
+RUN dnf install -y python
+
+RUN npm install --unsafe-perm
 
 RUN npm install -g webpack grunt
 
